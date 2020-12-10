@@ -2511,7 +2511,7 @@
   }
 
   .body {
-    overflow: hidden;
+    overflow: visible;
   }
 
   .header {
