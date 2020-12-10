@@ -65,7 +65,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: visible;
+  overflow: hidden;
   height: 90vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -83,10 +83,11 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: none;
-  background-position: 0px 0px;
-  background-size: auto;
+  background-image: url('../images/ink_structure_clean_1921.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
   background-repeat: repeat;
+  background-attachment: scroll;
   line-height: 0px;
   background-clip: border-box;
 }
@@ -108,7 +109,7 @@
 }
 
 .button {
-  display: none;
+  display: block;
   margin-left: 30px;
   padding-right: 25px;
   padding-left: 25px;
@@ -316,7 +317,7 @@
   margin-top: 10px;
   margin-bottom: 20px;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 32px;
 }
 
 .workteasertextl {
@@ -431,6 +432,11 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
 }
 
 .workteaserimgr {
@@ -584,7 +590,7 @@
   margin-top: 150px;
   padding-top: 90px;
   padding-bottom: 110px;
-  background-color: #d4d6e2;
+  background-color: #c8cce0;
 }
 
 .ctatextwrapper {
@@ -646,17 +652,19 @@
 
 .ink2 {
   position: absolute;
-  top: -7.1em;
+  top: -5.6em;
   right: 9%;
   display: block;
-  max-width: 13%;
+  width: 120px;
+  max-width: 12%;
 }
 
 .ink1 {
   position: absolute;
   left: 13%;
   bottom: -2.8em;
-  max-width: 12%;
+  width: 110px;
+  max-width: 11%;
 }
 
 .footer {
@@ -1093,7 +1101,7 @@
   right: 0%;
   bottom: 0%;
   z-index: -5;
-  display: block;
+  display: none;
   height: 90vh;
   clear: none;
   -webkit-align-self: center;
@@ -1140,7 +1148,7 @@
   top: 0%;
   right: auto;
   bottom: auto;
-  z-index: -1;
+  z-index: 0;
   display: block;
   overflow: hidden;
   height: 90vh;
@@ -1179,10 +1187,8 @@
 
 .splatterwrap2 {
   position: absolute;
-  left: auto;
-  top: auto;
-  right: 0%;
-  bottom: 0%;
+  overflow: hidden;
+  inset: 0% 0% 0% auto;
   height: 90vh;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
@@ -1193,6 +1199,7 @@
   position: relative;
   float: none;
   clear: none;
+  overflow: hidden;
 }
 
 .image-6 {
@@ -1297,7 +1304,7 @@
   right: 9%;
   bottom: 0%;
   z-index: -6;
-  display: none;
+  display: block;
   width: 14%;
   clear: none;
 }
@@ -1575,7 +1582,7 @@
   display: block;
 }
 
-.html-embed {
+.clipboardcss {
   display: none;
 }
 
@@ -1596,7 +1603,7 @@
   font-weight: 600;
 }
 
-.monogramsvg {
+.monogramsvgwhite {
   display: block;
 }
 
@@ -1606,6 +1613,26 @@
   height: 110px;
 }
 
+.preload {
+  position: absolute;
+  z-index: 99;
+  display: none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e24159;
+}
+
+.brandhome {
+  position: relative;
+  z-index: 97;
+  display: inline-block;
+  width: 50px;
+  max-width: 50px;
+  min-width: 50px;
+  padding-left: 0px;
+}
+
 @media screen and (min-width: 1920px) {
   .nav {
     padding-right: 140px;
@@ -1613,6 +1640,7 @@
   }
 
   .header {
+    overflow: hidden;
     padding-bottom: 60px;
   }
 
@@ -1759,7 +1787,7 @@
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    justify-items: center;
+    justify-items: end;
     grid-auto-columns: 1fr;
     grid-column-gap: 48px;
     grid-row-gap: 115px;
@@ -1878,15 +1906,27 @@
     max-width: 200%;
   }
 
+  .cta {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
   .ink2 {
-    top: -7.5em;
-    right: 24%;
+    top: -12em;
+    right: 25%;
     max-width: 8%;
   }
 
   .ink1 {
-    left: 23%;
-    bottom: -2.6em;
+    left: 28%;
+    bottom: -22.3em;
+    display: block;
     max-width: 9%;
   }
 
@@ -1916,8 +1956,37 @@
     margin-top: 10%;
   }
 
-  .html-embed {
+  .splatterwrap2 {
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    overflow: hidden;
+    height: 90vh;
+    max-width: 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    -ms-grid-row-align: auto;
+    align-self: auto;
+  }
+
+  .splatter2 {
+    right: -13%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+
+  .clipboardcss {
     display: none;
+  }
+
+  .inkwrapper {
+    position: absolute;
+    display: block;
+    width: 1920px;
   }
 }
 
@@ -2029,7 +2098,7 @@
     display: none;
   }
 
-  .html-embed {
+  .clipboardcss {
     display: none;
   }
 }
@@ -2061,6 +2130,19 @@
     z-index: 95;
     display: block;
     padding-top: 0px;
+  }
+
+  .header {
+    background-image: url('../images/ink_structure_clean_1921.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    overflow: hidden;
+  }
+
+  .brand {
+    z-index: 96;
   }
 
   .brand.w--current {
@@ -2101,6 +2183,11 @@
     -ms-flex-align: center;
     align-items: center;
     background-color: transparent;
+  }
+
+  .heading {
+    font-size: 58px;
+    line-height: 74px;
   }
 
   .worktitle {
@@ -2239,8 +2326,13 @@
     margin-left: -9em;
   }
 
+  .splatterwrap2 {
+    overflow: hidden;
+  }
+
   .splatter2 {
     right: -9em;
+    overflow: hidden;
   }
 
   .icon {
@@ -2416,9 +2508,24 @@
     opacity: 0.6;
   }
 
-  .monogramsvg {
+  .monogramsvgwhite {
     position: static;
     display: block;
+    max-width: 50px;
+    min-width: 50px;
+  }
+
+  .brandhome {
+    position: relative;
+    z-index: 97;
+    width: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    padding-left: 0px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
   }
 }
 
@@ -2465,7 +2572,7 @@
     -ms-grid-row-align: center;
     align-self: center;
     font-size: 37px;
-    line-height: 42px;
+    line-height: 50px;
   }
 
   .more {
@@ -2747,7 +2854,7 @@
   }
 }
 
-#w-node-a50fe741ace0-9db0197e {
+#w-node-a50fe741ace0-75c61ec7 {
   -ms-grid-column-align: start;
   justify-self: start;
   -webkit-align-self: center;
@@ -2756,7 +2863,7 @@
   align-self: center;
 }
 
-#w-node-2dc9ff9c8ec3-9db0197e {
+#w-node-2dc9ff9c8ec3-75c61ec7 {
   -ms-grid-column-span: 1;
   grid-column-end: 3;
   -ms-grid-column: 2;
@@ -2767,7 +2874,7 @@
   grid-row-start: 1;
 }
 
-#w-node-2dfc4ae8af70-9db0197e {
+#w-node-2dfc4ae8af70-75c61ec7 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -2776,7 +2883,7 @@
   justify-self: end;
 }
 
-#w-node-d937cb81aabb-9db0197e {
+#w-node-d937cb81aabb-75c61ec7 {
   -ms-grid-column-align: start;
   justify-self: start;
   -webkit-align-self: center;
@@ -2785,7 +2892,7 @@
   align-self: center;
 }
 
-#w-node-a4709a28b908-9db0197e {
+#w-node-a4709a28b908-75c61ec7 {
   -ms-grid-column-span: 1;
   grid-column-end: 3;
   -ms-grid-column: 2;
@@ -2796,7 +2903,7 @@
   grid-row-start: 1;
 }
 
-#w-node-a4709a28b90a-9db0197e {
+#w-node-a4709a28b90a-75c61ec7 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -2806,12 +2913,12 @@
 }
 
 @media screen and (min-width: 1920px) {
-  #w-node-a50fe741acde-9db0197e {
+  #w-node-a50fe741acde-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-a50fe741ace0-9db0197e {
+  #w-node-a50fe741ace0-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2820,7 +2927,7 @@
     align-self: center;
   }
 
-  #w-node-2dfc4ae8af70-9db0197e {
+  #w-node-2dfc4ae8af70-75c61ec7 {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     -ms-grid-row-align: auto;
@@ -2829,12 +2936,12 @@
     justify-self: end;
   }
 
-  #w-node-542a2d687924-9db0197e {
+  #w-node-542a2d687924-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-d937cb81aabb-9db0197e {
+  #w-node-d937cb81aabb-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2843,7 +2950,7 @@
     align-self: center;
   }
 
-  #w-node-a4709a28b90a-9db0197e {
+  #w-node-a4709a28b90a-75c61ec7 {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     -ms-grid-row-align: auto;
@@ -2854,12 +2961,12 @@
 }
 
 @media screen and (max-width: 991px) {
-  #w-node-a50fe741acde-9db0197e {
+  #w-node-a50fe741acde-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-a50fe741ace0-9db0197e {
+  #w-node-a50fe741ace0-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2868,7 +2975,7 @@
     align-self: center;
   }
 
-  #w-node-2dc9ff9c8ec3-9db0197e {
+  #w-node-2dc9ff9c8ec3-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -2879,7 +2986,7 @@
     grid-row-start: 1;
   }
 
-  #w-node-2dfc4ae8af70-9db0197e {
+  #w-node-2dfc4ae8af70-75c61ec7 {
     -ms-grid-row-align: auto;
     align-self: auto;
     -ms-grid-column-align: end;
@@ -2894,12 +3001,12 @@
     grid-column-end: span 2;
   }
 
-  #w-node-542a2d687924-9db0197e {
+  #w-node-542a2d687924-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-d937cb81aabb-9db0197e {
+  #w-node-d937cb81aabb-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2908,7 +3015,7 @@
     align-self: center;
   }
 
-  #w-node-a4709a28b908-9db0197e {
+  #w-node-a4709a28b908-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -2919,7 +3026,7 @@
     grid-row-start: 1;
   }
 
-  #w-node-a4709a28b90a-9db0197e {
+  #w-node-a4709a28b90a-75c61ec7 {
     -ms-grid-row-align: auto;
     align-self: auto;
     -ms-grid-column-align: end;
@@ -2936,12 +3043,12 @@
 }
 
 @media screen and (max-width: 767px) {
-  #w-node-a50fe741acde-9db0197e {
+  #w-node-a50fe741acde-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-a50fe741ace0-9db0197e {
+  #w-node-a50fe741ace0-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2950,7 +3057,7 @@
     align-self: center;
   }
 
-  #w-node-2dc9ff9c8ec3-9db0197e {
+  #w-node-2dc9ff9c8ec3-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -2961,7 +3068,7 @@
     grid-row-start: 1;
   }
 
-  #w-node-2dfc4ae8af70-9db0197e {
+  #w-node-2dfc4ae8af70-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -ms-grid-row-align: auto;
@@ -2976,12 +3083,12 @@
     grid-column-end: span 2;
   }
 
-  #w-node-542a2d687924-9db0197e {
+  #w-node-542a2d687924-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
   }
 
-  #w-node-d937cb81aabb-9db0197e {
+  #w-node-d937cb81aabb-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -webkit-align-self: center;
@@ -2990,7 +3097,7 @@
     align-self: center;
   }
 
-  #w-node-a4709a28b908-9db0197e {
+  #w-node-a4709a28b908-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -3001,7 +3108,7 @@
     grid-row-start: 1;
   }
 
-  #w-node-a4709a28b90a-9db0197e {
+  #w-node-a4709a28b90a-75c61ec7 {
     -ms-grid-column-align: start;
     justify-self: start;
     -ms-grid-row-align: auto;
@@ -3018,7 +3125,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  #w-node-a50fe741acde-9db0197e {
+  #w-node-a50fe741acde-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
     -ms-grid-row: span 1;
@@ -3031,7 +3138,7 @@
     grid-column-end: span 1;
   }
 
-  #w-node-2dc9ff9c8ec3-9db0197e {
+  #w-node-2dc9ff9c8ec3-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -3042,7 +3149,7 @@
     grid-row-start: 1;
   }
 
-  #w-node-542a2d687924-9db0197e {
+  #w-node-542a2d687924-75c61ec7 {
     -ms-grid-column-align: auto;
     justify-self: auto;
     -ms-grid-row: span 1;
@@ -3055,7 +3162,7 @@
     grid-column-end: span 1;
   }
 
-  #w-node-a4709a28b908-9db0197e {
+  #w-node-a4709a28b908-75c61ec7 {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
