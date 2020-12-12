@@ -81,7 +81,8 @@
 }
 
 .brand {
-  min-width: 55px;
+  min-width: 50px;
+  max-width: 50px;
 }
 
 .brand.w--current {
@@ -2121,6 +2122,7 @@
 
   .brand {
     z-index: 96;
+    max-width: 50px;
   }
 
   .brand.w--current {
@@ -2522,6 +2524,7 @@
     z-index: 97;
     width: 40px;
     min-width: 0px;
+    max-width: 50px;
     padding-left: 0px;
   }
 
